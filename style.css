@@ -119,7 +119,7 @@ section .infos {
     width: 100vw;
     position: fixed;
     top: 0;
-    background-image: #35353587;
+    background-color: #35353587;
     backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;

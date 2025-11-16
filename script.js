@@ -10,7 +10,7 @@ const scoreElememt = document.querySelector("#score")
 const timeElement = document.querySelector("#time")
 
 const blockHeight = 50
-const blockWeidht = 50
+const blockWidht = 50
 
 let highScore = localStorage.getItem("highScore") || 0
 let score = 0
@@ -18,7 +18,7 @@ let time = `00-00`
 
 highScoreElement.innerHTML = highScore
 
-const cols = Math.floor(board.clientWidth / blockWeidht);
+const cols = Math.floor(board.clientWidth / blockWidht);
 const rows = Math.floor(board.clientHeight / blockHeight);
 
 let intervalId = null;
@@ -115,12 +115,14 @@ startButton.addEventListener("click", () => {
 })
 
 
-restartButton.addEventListener("click", restartGame());
+restartButton.addEventListener("click", restartGame)
 
 function restartGame() {
 
     blocks[`${food.x}-${food.y}`].classList.remove("food")
-    snake.forEach(segment => { blocks[`${segment.x}-${segment.y}`].classList.remove("fill") })
+    snake.forEach(segment => {
+        blocks[`${segment.x}-${segment.y}`].classList.remove("fill")
+    })
 
     score = 0
     time = `00-00`
